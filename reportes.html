@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Portal de prueba - Reportes</title>
+
+<!-- =====================================================================
+     ÚNICO CAMBIO NECESARIO: pega aquí el identificador del sitio de Hotjar
+     (el número que aparece como "Identificador de la web").
+     Ejemplo: var HOTJAR_ID = 1234567;
+     ===================================================================== -->
+<script>
+  var HOTJAR_ID = 0;
+</script>
+
+<!-- Código de seguimiento de Hotjar (solo se carga si hay un identificador) -->
+<script>
+  if (HOTJAR_ID) {
+    (function(h,o,t,j,a,r){
+      h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+      h._hjSettings={hjid:HOTJAR_ID,hjsv:6};
+      a=o.getElementsByTagName('head')[0];
+      r=o.createElement('script');r.async=1;
+      r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+      a.appendChild(r);
+    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+  }
+</script>
+
+<style>
+  :root { --fondo:#f5f6f8; --tarjeta:#fff; --texto:#1d2330; --suave:#5d6577; --borde:#dfe2e8; --azul:#3b4cca; --ok:#1f7a4d; --aviso:#9a5b00; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif; background:var(--fondo); color:var(--texto); line-height:1.5; }
+  .franja { background:#fff4d6; color:#5c4300; padding:10px 16px; font-size:14px; text-align:center; border-bottom:1px solid #f0d58a; }
+  header { background:var(--tarjeta); border-bottom:1px solid var(--borde); padding:14px 24px; display:flex; gap:24px; align-items:center; flex-wrap:wrap; }
+  header strong { font-size:18px; }
+  nav a { color:var(--suave); text-decoration:none; margin-right:16px; }
+  nav a.activo { color:var(--azul); font-weight:600; }
+  main { max-width:960px; margin:24px auto; padding:0 16px; }
+  .tarjeta { background:var(--tarjeta); border:1px solid var(--borde); border-radius:10px; padding:20px; margin-bottom:16px; }
+  h1 { font-size:24px; margin:0 0 8px; }
+  h2 { font-size:17px; margin:0 0 12px; }
+  p { margin:0 0 10px; color:var(--suave); }
+  .estado { font-family:ui-monospace,Menlo,monospace; font-size:13px; padding:10px 12px; border-radius:8px; background:#f0f2f6; }
+  .estado.ok { color:var(--ok); } .estado.aviso { color:var(--aviso); }
+  .botones { display:flex; flex-wrap:wrap; gap:8px; }
+  button { font:inherit; font-size:14px; padding:9px 14px; border-radius:8px; border:1px solid var(--azul); background:#fff; color:var(--azul); cursor:pointer; }
+  button:hover { background:#eef0fb; }
+  .registro { font-family:ui-monospace,Menlo,monospace; font-size:12px; color:var(--suave); margin-top:10px; min-height:18px; }
+  .kpis { display:grid; grid-template-columns:repeat(auto-fit,minmax(180px,1fr)); gap:12px; }
+  .kpi { background:#f8f9fb; border:1px solid var(--borde); border-radius:8px; padding:14px; }
+  .kpi span { display:block; font-size:13px; color:var(--suave); }
+  .kpi b { font-size:22px; }
+  .relleno { height:900px; display:flex; align-items:flex-end; justify-content:center; color:var(--suave); font-size:13px; }
+</style>
+</head>
+<body>
+<div class="franja">Página de prueba de UX para probar encuestas de Hotjar. Todo el contenido es ficticio.</div>
+<header>
+  <strong>Portal de prueba</strong>
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="reportes.html" class="activo">Reportes</a>
+  </nav>
+</header>
+
+<main>
+  <div class="tarjeta">
+    <h1>Reportes</h1>
+    <p>Imita la pantalla de Reportes. Sirve para probar la regla "3 minutos en Reportes" (en las pruebas se usa un tiempo más corto) y el evento de descarga.</p>
+    <div id="estado" class="estado">Revisando Hotjar…</div>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Movimientos (ficticios)</h2>
+    <table style="width:100%;border-collapse:collapse;font-size:14px">
+      <thead><tr style="text-align:left;color:#5d6577"><th style="padding:8px;border-bottom:1px solid #dfe2e8">Fecha</th><th style="padding:8px;border-bottom:1px solid #dfe2e8">Tipo</th><th style="padding:8px;border-bottom:1px solid #dfe2e8">Comercio</th><th style="padding:8px;border-bottom:1px solid #dfe2e8">Monto</th></tr></thead>
+      <tbody>
+        <tr><td style="padding:8px">01/11</td><td style="padding:8px">Cobro</td><td style="padding:8px">Tienda Ejemplo</td><td style="padding:8px">$ 120,00</td></tr>
+        <tr><td style="padding:8px">01/11</td><td style="padding:8px">Pago</td><td style="padding:8px">Tienda Ejemplo</td><td style="padding:8px">$ 75,50</td></tr>
+        <tr><td style="padding:8px">31/10</td><td style="padding:8px">Cobro</td><td style="padding:8px">Comercio Demo</td><td style="padding:8px">$ 310,00</td></tr>
+        <tr><td style="padding:8px">30/10</td><td style="padding:8px">Cobro</td><td style="padding:8px">Comercio Demo</td><td style="padding:8px">$ 42,90</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="tarjeta">
+    <h2>Simular el fin de una tarea (eventos)</h2>
+    <p>Envía el mismo evento que enviaría el portal al terminar la descarga con éxito.</p>
+    <div class="botones">
+      <button data-evento="export.confirm">Descargar reporte</button>
+    </div>
+    <div class="registro" id="registro-eventos"></div>
+  </div>
+
+  <div class="tarjeta" style="display:none"><div id="registro-usuarios"></div></div>
+</main>
+
+<script>
+  // Estado del código de Hotjar
+  (function () {
+    var caja = document.getElementById('estado');
+    if (!HOTJAR_ID) {
+      caja.className = 'estado aviso';
+      caja.textContent = 'Hotjar no está configurado: falta pegar el identificador del sitio (HOTJAR_ID).';
+      return;
+    }
+    caja.textContent = 'Identificador del sitio: ' + HOTJAR_ID + '. Esperando a que cargue Hotjar…';
+    var intentos = 0;
+    var revisar = setInterval(function () {
+      intentos++;
+      var cargado = !!(window.hj && window._hjSettings && document.querySelector('script[src*="static.hotjar.com"]'));
+      if (cargado && window.hjSiteSettings) {
+        clearInterval(revisar);
+        caja.className = 'estado ok';
+        caja.textContent = 'Hotjar cargado. Identificador del sitio: ' + HOTJAR_ID + '.';
+      } else if (intentos > 20) {
+        clearInterval(revisar);
+        caja.className = 'estado aviso';
+        caja.textContent = 'El código de Hotjar se insertó, pero no se pudo confirmar que cargó. Usa "Verificar instalación" en Hotjar y revisa que no haya un bloqueador de anuncios activo.';
+      }
+    }, 500);
+  })();
+
+  function hora() { return new Date().toLocaleTimeString('es-PE'); }
+
+  // Eventos de fin de tarea
+  document.querySelectorAll('[data-evento]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var nombre = b.getAttribute('data-evento');
+      if (window.hj) { hj('event', nombre); }
+      document.getElementById('registro-eventos').textContent =
+        hora() + ' · Evento enviado: ' + nombre + (window.hj ? '' : ' (Hotjar no está cargado)');
+    });
+  });
+
+  // Usuarios ficticios con atributos
+  var usuarios = {
+    ambos: { id: 'prueba-001', attrs: { rol: 'Administrador Comercio', productos: 'payins_payouts', pais: 'PE', puede_ver_encuesta_b: true } },
+    uno:   { id: 'prueba-002', attrs: { rol: 'Agente', productos: 'payins', pais: 'CL', puede_ver_encuesta_b: true } },
+    nuevo: { id: 'prueba-003', attrs: { rol: 'Consulta', productos: 'payouts', pais: 'MX', puede_ver_encuesta_b: false } }
+  };
+  document.querySelectorAll('[data-usuario]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var u = usuarios[b.getAttribute('data-usuario')];
+      if (window.hj) { hj('identify', u.id, u.attrs); }
+      document.getElementById('registro-usuarios').textContent =
+        hora() + ' · Usuario enviado: ' + u.id + ' ' + JSON.stringify(u.attrs) + (window.hj ? '' : ' (Hotjar no está cargado)');
+    });
+  });
+</script>
+</body>
+</html>
